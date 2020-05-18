@@ -21,7 +21,7 @@ This is written in C# and a .sln solution for Visual Studio 2010 is provided. Wi
 Pre-compiled binaries are available at [my itch.io page](https://blendogames.itch.io/blendobuildmachine).
 
 ## License
-This source code is licensed under the zlib license. Read the license details here: [LICENSE.md](https://github.com/blendogames/blendobuildmachine/blob/master/license.md)
+This source code is licensed under the zlib license. Read the license details here: [LICENSE.md](https://github.com/blendogames/blendobuildmachine/blob/master/LICENSE.md)
 
 ## Credits
 by [Brendon Chung](http://blendogames.com)
