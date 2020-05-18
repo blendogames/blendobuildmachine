@@ -1,7 +1,7 @@
 ﻿# Blendo build machine
 
 ## About
-Blendo build machine gives teammates a one-click way of acquiring a new build.
+Blendo build machine gives teammates a one-click way of creating a new build.
 
 The purpose of this is:
 - Make it frictionless & easy for teammates to acquire the latest build.
