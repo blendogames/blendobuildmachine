@@ -14,6 +14,7 @@ namespace blendobuildmachine
         DateTime start;
 
         string exeFolder;
+        string exeFilepath;
 
         public Form1()
         {
@@ -27,8 +28,10 @@ namespace blendobuildmachine
             SanityCheck();
 
             exeFolder = string.Empty;
+            exeFilepath = string.Empty;
 
             openLocalExeFolderWhenDoneToolStripMenuItem.Checked = Properties.Settings.Default.openexefolder;
+            runExeWhenDoneToolStripMenuItem.Checked = Properties.Settings.Default.runexewhendone;
         }
 
         //DOWNLOAD THE LATEST CODE AND DATA FROM SOURCE CONTROL.
@@ -273,6 +276,7 @@ namespace blendobuildmachine
                             {
                                 AddLogInvoke(string.Format("Output exe: {0}", exeFile.FullName));
                                 exeFolder = exeFile.DirectoryName;
+                                exeFilepath = exeFile.FullName;
                             }
                         }
                     }
@@ -327,9 +331,40 @@ namespace blendobuildmachine
             if (openLocalExeFolderWhenDoneToolStripMenuItem.Checked)
             {
                 //Auto open exe folder.
-                AddLog(string.Format("Opening local exe folder: \"{0}\"", exeFolder));
-                AddLog(string.Empty);
-                openLocalExeFolderToolStripMenuItem_Click(null, null);
+                if (string.IsNullOrWhiteSpace(exeFolder))
+                {
+                    AddLog("Couldn't find exe folder.");
+                }
+                else
+                {
+                    AddLog(string.Format("Opening local exe folder: \"{0}\"", exeFolder));
+                    AddLog(string.Empty);
+                    openLocalExeFolderToolStripMenuItem_Click(null, null);
+                }
+            }
+
+            if (runExeWhenDoneToolStripMenuItem.Checked)
+            {
+                if (string.IsNullOrWhiteSpace(exeFilepath) || !File.Exists(exeFilepath))
+                {
+                    AddLog(string.Format("Couldn't find exe file: {0}", exeFilepath));
+                }
+                else
+                {
+                    AddLog(string.Format("Running exe: {0}", exeFilepath));
+
+                    try
+                    {
+                        var startInfo = new ProcessStartInfo();
+                        startInfo.WorkingDirectory = exeFolder;
+                        startInfo.FileName = exeFilepath;
+                        Process.Start(startInfo);
+                    }
+                    catch (Exception err)
+                    {
+                        AddLog(string.Format("Failed to run exe. {0}", err.Message));
+                    }
+                }
             }
         }
 
@@ -404,6 +439,7 @@ namespace blendobuildmachine
         protected void MyClosedHandler(object sender, EventArgs e)
         {
             Properties.Settings.Default.openexefolder = openLocalExeFolderWhenDoneToolStripMenuItem.Checked;
+            Properties.Settings.Default.runexewhendone = runExeWhenDoneToolStripMenuItem.Checked;
             Properties.Settings.Default.Save();
         }
 

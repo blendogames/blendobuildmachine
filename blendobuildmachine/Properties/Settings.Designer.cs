@@ -106,5 +106,17 @@ namespace blendobuildmachine.Properties {
                 this["openexefolder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool runexewhendone {
+            get {
+                return ((bool)(this["runexewhendone"]));
+            }
+            set {
+                this["runexewhendone"] = value;
+            }
+        }
     }
 }

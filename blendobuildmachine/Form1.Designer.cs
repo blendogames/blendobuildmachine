@@ -33,6 +33,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openLocalExeFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openLocalExeFolderWhenDoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -51,7 +52,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.verboseViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.openLocalExeFolderWhenDoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runExeWhenDoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +100,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openLocalExeFolderToolStripMenuItem,
             this.openLocalExeFolderWhenDoneToolStripMenuItem,
+            this.runExeWhenDoneToolStripMenuItem,
             this.toolStripMenuItem3,
             this.optionsToolStripMenuItem,
             this.toolStripMenuItem2,
@@ -115,6 +117,15 @@
             this.openLocalExeFolderToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.openLocalExeFolderToolStripMenuItem.Text = "Open exe folder";
             this.openLocalExeFolderToolStripMenuItem.Click += new System.EventHandler(this.openLocalExeFolderToolStripMenuItem_Click);
+            // 
+            // openLocalExeFolderWhenDoneToolStripMenuItem
+            // 
+            this.openLocalExeFolderWhenDoneToolStripMenuItem.Checked = true;
+            this.openLocalExeFolderWhenDoneToolStripMenuItem.CheckOnClick = true;
+            this.openLocalExeFolderWhenDoneToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.openLocalExeFolderWhenDoneToolStripMenuItem.Name = "openLocalExeFolderWhenDoneToolStripMenuItem";
+            this.openLocalExeFolderWhenDoneToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.openLocalExeFolderWhenDoneToolStripMenuItem.Text = "Open exe folder when done";
             // 
             // toolStripMenuItem3
             // 
@@ -250,14 +261,12 @@
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 3;
             // 
-            // openLocalExeFolderWhenDoneToolStripMenuItem
+            // runExeWhenDoneToolStripMenuItem
             // 
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.Checked = true;
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.CheckOnClick = true;
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.Name = "openLocalExeFolderWhenDoneToolStripMenuItem";
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.Text = "Open exe folder when done";
+            this.runExeWhenDoneToolStripMenuItem.CheckOnClick = true;
+            this.runExeWhenDoneToolStripMenuItem.Name = "runExeWhenDoneToolStripMenuItem";
+            this.runExeWhenDoneToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.runExeWhenDoneToolStripMenuItem.Text = "Run exe when done";
             // 
             // Form1
             // 
@@ -306,6 +315,7 @@
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openLocalExeFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openLocalExeFolderWhenDoneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem runExeWhenDoneToolStripMenuItem;
     }
 }
 
