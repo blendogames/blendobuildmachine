@@ -1,4 +1,5 @@
 ﻿# Blendo build machine
+[![Generic badge](https://img.shields.io/badge/Download-itch.io-red.svg)](https://blendogames.itch.io/blendobuildmachine) [![Donate](https://img.shields.io/badge/donate-$$$-brightgreen.svg)](https://blendogames.itch.io/blendobuildmachine/purchase)
 
 ## About
 Blendo build machine gives teammates a one-click way of creating a new build.
