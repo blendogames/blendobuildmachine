@@ -3,19 +3,19 @@
   <Profiles />
   <Settings>
     <Setting Name="repositoryUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://yoursubversion123456.com/repositoryaddress</Value>
+      <Value Profile="(Default)">http://yoursubversion12345.com/repositoryaddress</Value>
     </Setting>
     <Setting Name="svnExecutable" Type="System.String" Scope="User">
-      <Value Profile="(Default)">c:\Program Files (x86)\SlikSvn\bin\svn.exe</Value>
+      <Value Profile="(Default)">c:\Program Files\TortoiseSVN\bin\svn.exe</Value>
     </Setting>
     <Setting Name="compilerExecutable" Type="System.String" Scope="User">
       <Value Profile="(Default)">c:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe</Value>
     </Setting>
     <Setting Name="localFolderpath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">c:\games\monstergame</Value>
+      <Value Profile="(Default)">c:\games\gamename</Value>
     </Setting>
     <Setting Name="solutionfile" Type="System.String" Scope="User">
-      <Value Profile="(Default)">c:\games\monstergame\neo\solution\monstergame.sln</Value>
+      <Value Profile="(Default)">c:\games\gamename\solutionfile.sln</Value>
     </Setting>
     <Setting Name="environmentVars" Type="System.String" Scope="User">
       <Value Profile="(Default)">VCTargetsPath c:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\v140</Value>
@@ -24,6 +24,9 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="runexewhendone" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="runonstart" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>

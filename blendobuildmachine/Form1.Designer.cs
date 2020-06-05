@@ -33,7 +33,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openLocalExeFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openLocalExeFolderWhenDoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -52,7 +51,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.verboseViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.runExeWhenDoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,14 +59,13 @@
             this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(13, 29);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(659, 516);
+            this.listBox1.Size = new System.Drawing.Size(659, 511);
             this.listBox1.TabIndex = 0;
             // 
             // button1
@@ -99,8 +96,6 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openLocalExeFolderToolStripMenuItem,
-            this.openLocalExeFolderWhenDoneToolStripMenuItem,
-            this.runExeWhenDoneToolStripMenuItem,
             this.toolStripMenuItem3,
             this.optionsToolStripMenuItem,
             this.toolStripMenuItem2,
@@ -117,15 +112,6 @@
             this.openLocalExeFolderToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.openLocalExeFolderToolStripMenuItem.Text = "Open exe folder";
             this.openLocalExeFolderToolStripMenuItem.Click += new System.EventHandler(this.openLocalExeFolderToolStripMenuItem_Click);
-            // 
-            // openLocalExeFolderWhenDoneToolStripMenuItem
-            // 
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.Checked = true;
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.CheckOnClick = true;
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.Name = "openLocalExeFolderWhenDoneToolStripMenuItem";
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.openLocalExeFolderWhenDoneToolStripMenuItem.Text = "Open exe folder when done";
             // 
             // toolStripMenuItem3
             // 
@@ -261,13 +247,6 @@
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 3;
             // 
-            // runExeWhenDoneToolStripMenuItem
-            // 
-            this.runExeWhenDoneToolStripMenuItem.CheckOnClick = true;
-            this.runExeWhenDoneToolStripMenuItem.Name = "runExeWhenDoneToolStripMenuItem";
-            this.runExeWhenDoneToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.runExeWhenDoneToolStripMenuItem.Text = "Run exe when done";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,8 +293,6 @@
         private System.Windows.Forms.ToolStripMenuItem copySelectedToClipboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openLocalExeFolderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openLocalExeFolderWhenDoneToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem runExeWhenDoneToolStripMenuItem;
     }
 }
 

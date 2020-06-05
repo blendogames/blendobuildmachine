@@ -23,8 +23,23 @@ namespace blendobuildmachine
 
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(OnClickCloseButton);
 
+            textBox_localpath.TextChanged += new EventHandler(textBox_TextChanged);
+            textBox_svnexecutable.TextChanged += new EventHandler(textBox_TextChanged);
+            textBox_solutionfile.TextChanged += new EventHandler(textBox_TextChanged);
+            textBox_compilerexecutable.TextChanged += new EventHandler(textBox_TextChanged);
+
+            checkBox_buildonstart.Checked = Properties.Settings.Default.runonstart;
+            checkBox_openfolderwhendone.Checked = Properties.Settings.Default.openexefolder;
+            checkBox_runexewhendone.Checked = Properties.Settings.Default.runexewhendone;
+
             DoSanityCheck(false);
         }
+
+        private void textBox_TextChanged(Object sender, EventArgs e)
+        {
+            ((TextBox)sender).BackColor = Color.White;
+        }
+
 
         private void buttonOptionsOk_Click(object sender, EventArgs e)
         {
@@ -50,6 +65,10 @@ namespace blendobuildmachine
 
             string varsList = textBox_environmentVars.Text.Replace(Environment.NewLine, ",");
             Properties.Settings.Default.environmentVars = varsList;
+
+            Properties.Settings.Default.runonstart = checkBox_buildonstart.Checked;
+            Properties.Settings.Default.openexefolder = checkBox_openfolderwhendone.Checked;
+            Properties.Settings.Default.runexewhendone = checkBox_runexewhendone.Checked;
 
             Properties.Settings.Default.Save();
 

@@ -25,7 +25,7 @@ namespace blendobuildmachine.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://yoursubversion123456.com/repositoryaddress")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://yoursubversion12345.com/repositoryaddress")]
         public string repositoryUrl {
             get {
                 return ((string)(this["repositoryUrl"]));
@@ -37,7 +37,7 @@ namespace blendobuildmachine.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\Program Files (x86)\\SlikSvn\\bin\\svn.exe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\Program Files\\TortoiseSVN\\bin\\svn.exe")]
         public string svnExecutable {
             get {
                 return ((string)(this["svnExecutable"]));
@@ -61,7 +61,7 @@ namespace blendobuildmachine.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\games\\monstergame")]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\games\\gamename")]
         public string localFolderpath {
             get {
                 return ((string)(this["localFolderpath"]));
@@ -73,7 +73,7 @@ namespace blendobuildmachine.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\games\\monstergame\\neo\\solution\\monstergame.sln")]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\games\\gamename\\solutionfile.sln")]
         public string solutionfile {
             get {
                 return ((string)(this["solutionfile"]));
@@ -116,6 +116,18 @@ namespace blendobuildmachine.Properties {
             }
             set {
                 this["runexewhendone"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool runonstart {
+            get {
+                return ((bool)(this["runonstart"]));
+            }
+            set {
+                this["runonstart"] = value;
             }
         }
     }

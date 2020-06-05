@@ -30,8 +30,10 @@ namespace blendobuildmachine
             exeFolder = string.Empty;
             exeFilepath = string.Empty;
 
-            openLocalExeFolderWhenDoneToolStripMenuItem.Checked = Properties.Settings.Default.openexefolder;
-            runExeWhenDoneToolStripMenuItem.Checked = Properties.Settings.Default.runexewhendone;
+            if (Properties.Settings.Default.runonstart)
+            {
+                button1_Click(null, null);
+            }
         }
 
         //DOWNLOAD THE LATEST CODE AND DATA FROM SOURCE CONTROL.
@@ -42,14 +44,14 @@ namespace blendobuildmachine
 
             if (!File.Exists(Properties.Settings.Default.svnExecutable))
             {
-                AddLogInvoke(string.Format("ERROR: failed to find svn executable {0}", Properties.Settings.Default.svnExecutable));
+                AddLogInvoke(string.Format("Error: failed to find svn executable {0}", Properties.Settings.Default.svnExecutable));
                 e.Result = false;
                 return;
             }
 
             if (!Directory.Exists(Properties.Settings.Default.localFolderpath))
             {
-                AddLogInvoke(string.Format("ERROR: failed to find game folder {0}", Properties.Settings.Default.localFolderpath));
+                AddLogInvoke(string.Format("Error: failed to find game folder {0}", Properties.Settings.Default.localFolderpath));
                 e.Result = false;
                 return;
             }
@@ -97,7 +99,7 @@ namespace blendobuildmachine
                 }
                 catch (Exception err)
                 {
-                    AddLogInvoke(i <= 0 ? "ERROR: SVN checkout failed." : "ERROR: SVN update failed.");
+                    AddLogInvoke(i <= 0 ? "Error: SVN checkout failed." : "Error: SVN update failed.");
                     AddLogInvoke(err.Message);
                     e.Result = false;
                     return;
@@ -118,7 +120,7 @@ namespace blendobuildmachine
         {
             if (e.Error != null)
             {
-                AddLog(string.Format("ERROR: {0}", e.Error));
+                AddLog(string.Format("Error: {0}", e.Error));
                 return;
             }
 
@@ -132,7 +134,7 @@ namespace blendobuildmachine
                     SetButtonsEnabled(true);
                     listBox1.BackColor = Color.Pink;
                     progressBar1.Value = 0;
-                    AddLog("ERROR: SVN failed.");
+                    AddLog("Error: SVN failed.");
                     return;
                 }
             }
@@ -155,14 +157,14 @@ namespace blendobuildmachine
         {
             if (!File.Exists(Properties.Settings.Default.compilerExecutable))
             {
-                AddLogInvoke(string.Format("ERROR: failed to find compiler executable {0}", Properties.Settings.Default.compilerExecutable));
+                AddLogInvoke(string.Format("Error: failed to find compiler executable {0}", Properties.Settings.Default.compilerExecutable));
                 e.Result = false;
                 return;
             }
 
             if (!File.Exists(Properties.Settings.Default.solutionfile))
             {
-                AddLogInvoke(string.Format("ERROR: failed to find solution file {0}", Properties.Settings.Default.solutionfile));
+                AddLogInvoke(string.Format("Error: failed to find solution file {0}", Properties.Settings.Default.solutionfile));
                 e.Result = false;
                 return;
             }
@@ -251,7 +253,7 @@ namespace blendobuildmachine
             }
             catch (Exception err)
             {
-                AddLogInvoke("ERROR: failed to compile.");
+                AddLogInvoke("Error: failed to compile.");
                 AddLogInvoke(err.Message);
             }
 
@@ -295,7 +297,7 @@ namespace blendobuildmachine
 
             if (e.Error != null)
             {
-                AddLog(string.Format("ERROR: {0}", e.Error));
+                AddLog(string.Format("Error: {0}", e.Error));
                 return;
             }
 
@@ -308,7 +310,7 @@ namespace blendobuildmachine
                     //Error.
                     listBox1.BackColor = Color.Pink;
                     progressBar1.Value = 0;
-                    AddLog("ERROR: code compile failed.");
+                    AddLog("Error: code compile failed.");
                     return;
                 }
             }
@@ -328,7 +330,7 @@ namespace blendobuildmachine
 
             listBox1.BackColor = Color.GreenYellow;
 
-            if (openLocalExeFolderWhenDoneToolStripMenuItem.Checked)
+            if (Properties.Settings.Default.openexefolder)
             {
                 //Auto open exe folder.
                 if (string.IsNullOrWhiteSpace(exeFolder))
@@ -343,7 +345,7 @@ namespace blendobuildmachine
                 }
             }
 
-            if (runExeWhenDoneToolStripMenuItem.Checked)
+            if (Properties.Settings.Default.runexewhendone)
             {
                 if (string.IsNullOrWhiteSpace(exeFilepath) || !File.Exists(exeFilepath))
                 {
@@ -408,25 +410,25 @@ namespace blendobuildmachine
             bool success = true;
             if (!Directory.Exists(Properties.Settings.Default.localFolderpath))
             {
-                AddLog("ERROR: failed to find game code folder. Please go to File > Options");
+                AddLog("Error: failed to find game code folder. Please go to File > Options");
                 success = false;
             }
 
             if (!File.Exists(Properties.Settings.Default.solutionfile))
             {
-                AddLog("ERROR: failed to find code solution file. Please go to File > Options");
+                AddLog("Error: failed to find code solution file. Please go to File > Options");
                 success = false;
             }
 
             if (!File.Exists(Properties.Settings.Default.svnExecutable))
             {
-                AddLog("ERROR: failed to find svn executable. Please go to File > Options");
+                AddLog("Error: failed to find svn executable. Please go to File > Options");
                 success = false;
             }
 
             if (!File.Exists(Properties.Settings.Default.compilerExecutable))
             {
-                AddLog("ERROR: failed to find code compiler executable. Please go to File > Options");
+                AddLog("Error: failed to find code compiler executable. Please go to File > Options");
                 success = false;
             }
 
@@ -437,10 +439,8 @@ namespace blendobuildmachine
         }
 
         protected void MyClosedHandler(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.openexefolder = openLocalExeFolderWhenDoneToolStripMenuItem.Checked;
-            Properties.Settings.Default.runexewhendone = runExeWhenDoneToolStripMenuItem.Checked;
-            Properties.Settings.Default.Save();
+        {            
+            //Properties.Settings.Default.Save();
         }
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -580,7 +580,7 @@ namespace blendobuildmachine
             }
             catch (Exception err)
             {
-                AddLogInvoke("ERROR: SVN retrieve changelog failed.");
+                AddLogInvoke("Error: SVN retrieve changelog failed.");
                 AddLogInvoke(err.Message);
                 e.Result = false;
                 return;
@@ -593,7 +593,7 @@ namespace blendobuildmachine
         {
             if (e.Error != null)
             {
-                AddLog(string.Format("ERROR: {0}", e.Error));
+                AddLog(string.Format("Error: {0}", e.Error));
                 return;
             }
 
@@ -606,7 +606,7 @@ namespace blendobuildmachine
                     //Error.
                     listBox1.BackColor = Color.Pink;
                     progressBar1.Value = 0;
-                    AddLog("ERROR: view changelog failed.");
+                    AddLog("Error: view changelog failed.");
                     SetButtonsEnabled(true);
                     return;
                 }
