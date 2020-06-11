@@ -223,6 +223,16 @@ namespace blendobuildmachine
                 while (!proc.StandardOutput.EndOfStream)
                 {
                     string line = proc.StandardOutput.ReadLine();
+
+                    //Filter out warnings.
+                    if (!Properties.Settings.Default.verbose
+                        && (line.Contains("): warning ") || line.Contains("): note: see declaration of ")))
+                    {
+                        continue;
+                    }
+                    
+
+                    //Add log output.
                     AddLogInvoke("    " + line);
 
                     if (line.StartsWith("build failed.", true, System.Globalization.CultureInfo.InvariantCulture))

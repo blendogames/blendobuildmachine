@@ -31,6 +31,7 @@ namespace blendobuildmachine
             checkBox_buildonstart.Checked = Properties.Settings.Default.runonstart;
             checkBox_openfolderwhendone.Checked = Properties.Settings.Default.openexefolder;
             checkBox_runexewhendone.Checked = Properties.Settings.Default.runexewhendone;
+            checkBox_verbose.Checked = Properties.Settings.Default.verbose;
 
             DoSanityCheck(false);
         }
@@ -69,6 +70,7 @@ namespace blendobuildmachine
             Properties.Settings.Default.runonstart = checkBox_buildonstart.Checked;
             Properties.Settings.Default.openexefolder = checkBox_openfolderwhendone.Checked;
             Properties.Settings.Default.runexewhendone = checkBox_runexewhendone.Checked;
+            Properties.Settings.Default.verbose = checkBox_verbose.Checked;
 
             Properties.Settings.Default.Save();
 
@@ -126,6 +128,70 @@ namespace blendobuildmachine
             }
 
             return success;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Attempt to auto-find svn.exe
+
+            if (File.Exists(textBox_svnexecutable.Text))
+            {
+                MessageBox.Show(string.Format("Field already has valid value:\n\n{0}", textBox_svnexecutable.Text), string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //Search for common places.
+            string[] paths = new string[]
+            {                
+                "C:\\Program Files\\TortoiseSVN\\bin\\svn.exe",
+                "C:\\Program Files\\SlikSvn\\bin\\svn.exe",
+                "C:\\Program Files\\CollabNet\\Subversion Client\\svn.exe",
+            };
+
+            for (int i = 0; i < paths.Length; i++)
+            {
+                if (File.Exists(paths[i]))
+                {
+                    textBox_svnexecutable.Text = paths[i];
+                    textBox_svnexecutable.BackColor = Color.GreenYellow;
+                    return;
+                }
+            }
+
+            MessageBox.Show("Unable to auto-find svn.exe\n\nPlease search your computer for 'svn.exe'");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Attempt to auto-find msbuild.exe
+
+            if (File.Exists(textBox_compilerexecutable.Text))
+            {
+                MessageBox.Show(string.Format("Field already has valid value:\n\n{0}", textBox_compilerexecutable.Text), string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //Search for common places.
+            string[] paths = new string[]
+            {                
+                "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\msbuild.exe",
+                "C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\msbuild.exe",
+                "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\msbuild.exe",
+                "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\MSBuild\\15.0\\Bin\\msbuild.exe",
+                "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\MSBuild\\15.0\\Bin\\amd64\\msbuild.exe",
+            };
+
+            for (int i = 0; i < paths.Length; i++)
+            {
+                if (File.Exists(paths[i]))
+                {
+                    textBox_compilerexecutable.Text = paths[i];
+                    textBox_compilerexecutable.BackColor = Color.GreenYellow;
+                    return;
+                }
+            }
+
+            MessageBox.Show("Unable to auto-find msbuild.exe\n\nPlease search your computer for 'msbuild.exe'");
         }
     }
 }

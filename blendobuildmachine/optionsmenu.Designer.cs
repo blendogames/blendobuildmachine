@@ -44,9 +44,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_environmentVars = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox_buildonstart = new System.Windows.Forms.CheckBox();
-            this.checkBox_openfolderwhendone = new System.Windows.Forms.CheckBox();
             this.checkBox_runexewhendone = new System.Windows.Forms.CheckBox();
+            this.checkBox_openfolderwhendone = new System.Windows.Forms.CheckBox();
+            this.checkBox_buildonstart = new System.Windows.Forms.CheckBox();
+            this.checkBox_verbose = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,7 +110,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_svnexecutable.Location = new System.Drawing.Point(6, 141);
             this.textBox_svnexecutable.Name = "textBox_svnexecutable";
-            this.textBox_svnexecutable.Size = new System.Drawing.Size(491, 20);
+            this.textBox_svnexecutable.Size = new System.Drawing.Size(447, 20);
             this.textBox_svnexecutable.TabIndex = 2;
             // 
             // label3
@@ -125,7 +128,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_compilerexecutable.Location = new System.Drawing.Point(9, 94);
             this.textBox_compilerexecutable.Name = "textBox_compilerexecutable";
-            this.textBox_compilerexecutable.Size = new System.Drawing.Size(487, 20);
+            this.textBox_compilerexecutable.Size = new System.Drawing.Size(443, 20);
             this.textBox_compilerexecutable.TabIndex = 4;
             // 
             // label4
@@ -159,6 +162,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox_localpath);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox_repositoryurl);
@@ -168,7 +172,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 162);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(507, 174);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SVN";
             // 
@@ -178,6 +182,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.textBox_environmentVars);
             this.groupBox2.Controls.Add(this.textBox_solutionfile);
@@ -215,15 +220,36 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.checkBox_verbose);
             this.groupBox3.Controls.Add(this.checkBox_runexewhendone);
             this.groupBox3.Controls.Add(this.checkBox_openfolderwhendone);
             this.groupBox3.Controls.Add(this.checkBox_buildonstart);
             this.groupBox3.Location = new System.Drawing.Point(12, 13);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(497, 129);
-            this.groupBox3.TabIndex = 101;
+            this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Behavior";
+            // 
+            // checkBox_runexewhendone
+            // 
+            this.checkBox_runexewhendone.AutoSize = true;
+            this.checkBox_runexewhendone.Location = new System.Drawing.Point(14, 46);
+            this.checkBox_runexewhendone.Name = "checkBox_runexewhendone";
+            this.checkBox_runexewhendone.Size = new System.Drawing.Size(218, 17);
+            this.checkBox_runexewhendone.TabIndex = 2;
+            this.checkBox_runexewhendone.Text = "When build is done, run the new .exe file";
+            this.checkBox_runexewhendone.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_openfolderwhendone
+            // 
+            this.checkBox_openfolderwhendone.AutoSize = true;
+            this.checkBox_openfolderwhendone.Location = new System.Drawing.Point(14, 72);
+            this.checkBox_openfolderwhendone.Name = "checkBox_openfolderwhendone";
+            this.checkBox_openfolderwhendone.Size = new System.Drawing.Size(261, 17);
+            this.checkBox_openfolderwhendone.TabIndex = 3;
+            this.checkBox_openfolderwhendone.Text = "When build is done, open folder the new .exe is in";
+            this.checkBox_openfolderwhendone.UseVisualStyleBackColor = true;
             // 
             // checkBox_buildonstart
             // 
@@ -235,25 +261,37 @@
             this.checkBox_buildonstart.Text = "Automatically make a build when this program starts";
             this.checkBox_buildonstart.UseVisualStyleBackColor = true;
             // 
-            // checkBox_openfolderwhendone
+            // checkBox_verbose
             // 
-            this.checkBox_openfolderwhendone.AutoSize = true;
-            this.checkBox_openfolderwhendone.Location = new System.Drawing.Point(14, 80);
-            this.checkBox_openfolderwhendone.Name = "checkBox_openfolderwhendone";
-            this.checkBox_openfolderwhendone.Size = new System.Drawing.Size(261, 17);
-            this.checkBox_openfolderwhendone.TabIndex = 1;
-            this.checkBox_openfolderwhendone.Text = "When build is done, open folder the new .exe is in";
-            this.checkBox_openfolderwhendone.UseVisualStyleBackColor = true;
+            this.checkBox_verbose.AutoSize = true;
+            this.checkBox_verbose.Location = new System.Drawing.Point(14, 96);
+            this.checkBox_verbose.Name = "checkBox_verbose";
+            this.checkBox_verbose.Size = new System.Drawing.Size(228, 17);
+            this.checkBox_verbose.TabIndex = 4;
+            this.checkBox_verbose.Text = "Show verbose output when compiling build";
+            this.checkBox_verbose.UseVisualStyleBackColor = true;
             // 
-            // checkBox_runexewhendone
+            // button1
             // 
-            this.checkBox_runexewhendone.AutoSize = true;
-            this.checkBox_runexewhendone.Location = new System.Drawing.Point(14, 50);
-            this.checkBox_runexewhendone.Name = "checkBox_runexewhendone";
-            this.checkBox_runexewhendone.Size = new System.Drawing.Size(218, 17);
-            this.checkBox_runexewhendone.TabIndex = 2;
-            this.checkBox_runexewhendone.Text = "When build is done, run the new .exe file";
-            this.checkBox_runexewhendone.UseVisualStyleBackColor = true;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(459, 141);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(38, 20);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Find";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(458, 94);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(38, 20);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Find";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // optionsmenu
             // 
@@ -301,5 +339,8 @@
         private System.Windows.Forms.CheckBox checkBox_runexewhendone;
         private System.Windows.Forms.CheckBox checkBox_openfolderwhendone;
         private System.Windows.Forms.CheckBox checkBox_buildonstart;
+        private System.Windows.Forms.CheckBox checkBox_verbose;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
