@@ -27,13 +27,14 @@ namespace blendobuildmachine
 
             SanityCheck();
 
-            exeFolder = string.Empty;
+            exeFolder = Properties.Settings.Default.lastexefolder;
             exeFilepath = string.Empty;
 
             if (Properties.Settings.Default.runonstart)
             {
                 button1_Click(null, null);
             }
+
         }
 
         //DOWNLOAD THE LATEST CODE AND DATA FROM SOURCE CONTROL.
@@ -224,9 +225,11 @@ namespace blendobuildmachine
                 {
                     string line = proc.StandardOutput.ReadLine();
 
-                    //Filter out warnings.
+                    //Filter out warnings and notes.
                     if (!Properties.Settings.Default.verbose
-                        && (line.Contains("): warning ") || line.Contains("): note: see declaration of ")))
+                        && (line.Contains("): warning ") || line.Contains("): note: ")                        
+                        || line.Contains(" : warning LNK")
+                        ))
                     {
                         continue;
                     }
@@ -267,6 +270,11 @@ namespace blendobuildmachine
                 AddLogInvoke(err.Message);
             }
 
+            if (Properties.Settings.Default.playbeep)
+            {
+                Console.Beep(800, 500);
+            }
+
             if (executables.Count > 0)
             {
                 AddLogInvoke(string.Empty);
@@ -289,6 +297,14 @@ namespace blendobuildmachine
                                 AddLogInvoke(string.Format("Output exe: {0}", exeFile.FullName));
                                 exeFolder = exeFile.DirectoryName;
                                 exeFilepath = exeFile.FullName;
+
+                                if (!string.IsNullOrWhiteSpace(exeFolder))
+                                {
+                                    if (Directory.Exists(exeFolder))
+                                    {
+                                        Properties.Settings.Default.lastexefolder = exeFolder;
+                                    }
+                                }
                             }
                         }
                     }
@@ -342,7 +358,7 @@ namespace blendobuildmachine
 
             if (Properties.Settings.Default.openexefolder)
             {
-                //Auto open exe folder.
+                //When compile complete, auto open the exe folder.
                 if (string.IsNullOrWhiteSpace(exeFolder))
                 {
                     AddLog("Couldn't find exe folder.");
@@ -450,7 +466,7 @@ namespace blendobuildmachine
 
         protected void MyClosedHandler(object sender, EventArgs e)
         {            
-            //Properties.Settings.Default.Save();
+            Properties.Settings.Default.Save();
         }
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -796,11 +812,12 @@ namespace blendobuildmachine
             }
             catch (Exception err)
             {
+                listBox1.BackColor = Color.Pink;
                 AddLog(err.Message);
                 return;
             }
 
-            AddLog("Opened local exe folder.");
+            AddLog(string.Format("Opened local exe folder {0}", exeFolder));
         }
     }
 }

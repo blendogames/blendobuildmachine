@@ -142,5 +142,29 @@ namespace blendobuildmachine.Properties {
                 this["verbose"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string lastexefolder {
+            get {
+                return ((string)(this["lastexefolder"]));
+            }
+            set {
+                this["lastexefolder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool playbeep {
+            get {
+                return ((bool)(this["playbeep"]));
+            }
+            set {
+                this["playbeep"] = value;
+            }
+        }
     }
 }

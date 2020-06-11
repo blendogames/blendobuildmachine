@@ -32,6 +32,7 @@ namespace blendobuildmachine
             checkBox_openfolderwhendone.Checked = Properties.Settings.Default.openexefolder;
             checkBox_runexewhendone.Checked = Properties.Settings.Default.runexewhendone;
             checkBox_verbose.Checked = Properties.Settings.Default.verbose;
+            checkBox_beep.Checked = Properties.Settings.Default.playbeep;
 
             DoSanityCheck(false);
         }
@@ -71,6 +72,7 @@ namespace blendobuildmachine
             Properties.Settings.Default.openexefolder = checkBox_openfolderwhendone.Checked;
             Properties.Settings.Default.runexewhendone = checkBox_runexewhendone.Checked;
             Properties.Settings.Default.verbose = checkBox_verbose.Checked;
+            Properties.Settings.Default.playbeep = checkBox_beep.Checked;
 
             Properties.Settings.Default.Save();
 

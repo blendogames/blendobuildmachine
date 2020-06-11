@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -109,26 +110,26 @@
             // openLocalExeFolderToolStripMenuItem
             // 
             this.openLocalExeFolderToolStripMenuItem.Name = "openLocalExeFolderToolStripMenuItem";
-            this.openLocalExeFolderToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.openLocalExeFolderToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.openLocalExeFolderToolStripMenuItem.Text = "Open exe folder";
             this.openLocalExeFolderToolStripMenuItem.Click += new System.EventHandler(this.openLocalExeFolderToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(216, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(154, 6);
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(216, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(154, 6);
             // 
             // logsToolStripMenuItem
             // 
@@ -137,7 +138,7 @@
             this.copySelectedToClipboardToolStripMenuItem,
             this.clearToolStripMenuItem});
             this.logsToolStripMenuItem.Name = "logsToolStripMenuItem";
-            this.logsToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.logsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.logsToolStripMenuItem.Text = "Logs";
             // 
             // copyToClipboardToolStripMenuItem1
@@ -164,14 +165,14 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -256,6 +257,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(350, 200);
             this.Name = "Form1";
