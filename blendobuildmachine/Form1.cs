@@ -67,7 +67,7 @@ namespace blendobuildmachine
 
             for (int i = 0; i < arguments.Length; i++)
             {
-                AddLogInvoke(i <= 0 ? "SVN: checking out..." : "SVN: updating data...");
+                AddLogInvoke(i <= 0 ? "SVN: checking out..." : "SVN: updating data..."); //Print what stage we're in.
 
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.FileName = Properties.Settings.Default.svnExecutable;
@@ -85,6 +85,8 @@ namespace blendobuildmachine
                 {
                 }
 
+                int outputlineCount = 0;
+
                 try
                 {
                     Process proc = new Process();
@@ -94,14 +96,22 @@ namespace blendobuildmachine
                     while (!proc.StandardOutput.EndOfStream)
                     {
                         string line = proc.StandardOutput.ReadLine();
-
                         AddLogInvoke("    " + line);
+                        outputlineCount++;
                     }
                 }
                 catch (Exception err)
                 {
                     AddLogInvoke(i <= 0 ? "Error: SVN checkout failed." : "Error: SVN update failed.");
                     AddLogInvoke(err.Message);
+                    e.Result = false;
+                    return;
+                }
+
+                if (outputlineCount <= 0)
+                {
+                    //If there are zero output lines, then something has gone wrong.
+                    AddLogInvoke("Error: received no response from SVN.");
                     e.Result = false;
                     return;
                 }
