@@ -278,6 +278,7 @@ namespace blendobuildmachine
             {
                 AddLogInvoke("Error: failed to compile.");
                 AddLogInvoke(err.Message);
+                buildSuccess = false;
             }
 
             if (Properties.Settings.Default.playbeep)
@@ -403,6 +404,12 @@ namespace blendobuildmachine
                         AddLog(string.Format("Failed to run exe. {0}", err.Message));
                     }
                 }
+            }
+
+            if (Properties.Settings.Default.exitwhendone)
+            {
+                //Exit when done is ON. So, exit here.
+                Application.Exit();
             }
         }
 

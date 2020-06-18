@@ -46,11 +46,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_environmentVars = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox_beep = new System.Windows.Forms.CheckBox();
             this.checkBox_verbose = new System.Windows.Forms.CheckBox();
             this.checkBox_runexewhendone = new System.Windows.Forms.CheckBox();
             this.checkBox_openfolderwhendone = new System.Windows.Forms.CheckBox();
             this.checkBox_buildonstart = new System.Windows.Forms.CheckBox();
-            this.checkBox_beep = new System.Windows.Forms.CheckBox();
+            this.checkBox_exitwhendone = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -170,7 +171,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox_svnexecutable);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 204);
+            this.groupBox1.Location = new System.Drawing.Point(12, 219);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(507, 174);
             this.groupBox1.TabIndex = 5;
@@ -201,9 +202,9 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox_compilerexecutable);
-            this.groupBox2.Location = new System.Drawing.Point(13, 392);
+            this.groupBox2.Location = new System.Drawing.Point(13, 403);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(506, 222);
+            this.groupBox2.Size = new System.Drawing.Size(506, 211);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Compiling";
@@ -236,13 +237,14 @@
             this.textBox_environmentVars.Location = new System.Drawing.Point(9, 148);
             this.textBox_environmentVars.Multiline = true;
             this.textBox_environmentVars.Name = "textBox_environmentVars";
-            this.textBox_environmentVars.Size = new System.Drawing.Size(487, 68);
+            this.textBox_environmentVars.Size = new System.Drawing.Size(487, 57);
             this.textBox_environmentVars.TabIndex = 5;
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.checkBox_exitwhendone);
             this.groupBox3.Controls.Add(this.checkBox_beep);
             this.groupBox3.Controls.Add(this.checkBox_verbose);
             this.groupBox3.Controls.Add(this.checkBox_runexewhendone);
@@ -250,10 +252,20 @@
             this.groupBox3.Controls.Add(this.checkBox_buildonstart);
             this.groupBox3.Location = new System.Drawing.Point(12, 13);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(497, 170);
+            this.groupBox3.Size = new System.Drawing.Size(497, 188);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Behavior";
+            // 
+            // checkBox_beep
+            // 
+            this.checkBox_beep.AutoSize = true;
+            this.checkBox_beep.Location = new System.Drawing.Point(14, 100);
+            this.checkBox_beep.Name = "checkBox_beep";
+            this.checkBox_beep.Size = new System.Drawing.Size(210, 17);
+            this.checkBox_beep.TabIndex = 6;
+            this.checkBox_beep.Text = "When build is done, play a beep sound";
+            this.checkBox_beep.UseVisualStyleBackColor = true;
             // 
             // checkBox_verbose
             // 
@@ -295,15 +307,15 @@
             this.checkBox_buildonstart.Text = "Automatically make a build when this program starts";
             this.checkBox_buildonstart.UseVisualStyleBackColor = true;
             // 
-            // checkBox_beep
+            // checkBox_exitwhendone
             // 
-            this.checkBox_beep.AutoSize = true;
-            this.checkBox_beep.Location = new System.Drawing.Point(14, 100);
-            this.checkBox_beep.Name = "checkBox_beep";
-            this.checkBox_beep.Size = new System.Drawing.Size(210, 17);
-            this.checkBox_beep.TabIndex = 6;
-            this.checkBox_beep.Text = "When build is done, play a beep sound";
-            this.checkBox_beep.UseVisualStyleBackColor = true;
+            this.checkBox_exitwhendone.AutoSize = true;
+            this.checkBox_exitwhendone.Location = new System.Drawing.Point(14, 153);
+            this.checkBox_exitwhendone.Name = "checkBox_exitwhendone";
+            this.checkBox_exitwhendone.Size = new System.Drawing.Size(200, 17);
+            this.checkBox_exitwhendone.TabIndex = 9;
+            this.checkBox_exitwhendone.Text = "On successful build, exit this program";
+            this.checkBox_exitwhendone.UseVisualStyleBackColor = true;
             // 
             // optionsmenu
             // 
@@ -355,5 +367,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox_beep;
+        private System.Windows.Forms.CheckBox checkBox_exitwhendone;
     }
 }

@@ -166,5 +166,17 @@ namespace blendobuildmachine.Properties {
                 this["playbeep"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool exitwhendone {
+            get {
+                return ((bool)(this["exitwhendone"]));
+            }
+            set {
+                this["exitwhendone"] = value;
+            }
+        }
     }
 }

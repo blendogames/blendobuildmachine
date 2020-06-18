@@ -33,6 +33,7 @@ namespace blendobuildmachine
             checkBox_runexewhendone.Checked = Properties.Settings.Default.runexewhendone;
             checkBox_verbose.Checked = Properties.Settings.Default.verbose;
             checkBox_beep.Checked = Properties.Settings.Default.playbeep;
+            checkBox_exitwhendone.Checked = Properties.Settings.Default.exitwhendone;
 
             DoSanityCheck(false);
         }
@@ -73,6 +74,7 @@ namespace blendobuildmachine
             Properties.Settings.Default.runexewhendone = checkBox_runexewhendone.Checked;
             Properties.Settings.Default.verbose = checkBox_verbose.Checked;
             Properties.Settings.Default.playbeep = checkBox_beep.Checked;
+            Properties.Settings.Default.exitwhendone = checkBox_exitwhendone.Checked;
 
             Properties.Settings.Default.Save();
 
