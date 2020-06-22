@@ -20,7 +20,7 @@ namespace blendobuildmachine
         {
             InitializeComponent();
 
-            this.FormClosed += MyClosedHandler;
+            this.FormClosing += MyClosingHandler;
 
             AddLog("Welcome to Blendo build machine.");
             AddLog(string.Empty);
@@ -93,8 +93,16 @@ namespace blendobuildmachine
                     proc.StartInfo = startInfo;
                     proc.Start();
 
+                    //Output the SVN results.
                     while (!proc.StandardOutput.EndOfStream)
                     {
+                        if (backgroundWorker.CancellationPending)
+                        {
+                            //Cancel.
+                            e.Result = false;
+                            return;
+                        }
+
                         string line = proc.StandardOutput.ReadLine();
                         AddLogInvoke("    " + line);
                         outputlineCount++;
@@ -233,6 +241,13 @@ namespace blendobuildmachine
 
                 while (!proc.StandardOutput.EndOfStream)
                 {
+                    if (backgroundWorker.CancellationPending)
+                    {
+                        //Cancel.
+                        e.Result = false;
+                        return;
+                    }
+
                     string line = proc.StandardOutput.ReadLine();
 
                     //Filter out warnings and notes.
@@ -481,10 +496,40 @@ namespace blendobuildmachine
             return success;
         }
 
-        protected void MyClosedHandler(object sender, EventArgs e)
-        {            
-            Properties.Settings.Default.Save();
+        protected void MyClosingHandler(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                //If build is happening, intercept the close command and cancel the build process.
+
+                bool exit = true;
+
+                if (backgroundWorker != null)
+                {
+                    if (backgroundWorker.IsBusy)
+                    {
+                        backgroundWorker.WorkerSupportsCancellation = true;
+                        backgroundWorker.CancelAsync();
+                        e.Cancel = true;
+                        exit = false;
+                    }
+                }
+
+                if (exit)
+                {
+                    Properties.Settings.Default.Save();
+                    base.OnClosing(e);
+                    return;
+                }
+            }
+            else
+            {
+                Properties.Settings.Default.Save();
+                base.OnClosing(e);
+            }
         }
+
+
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -604,6 +649,13 @@ namespace blendobuildmachine
 
                 while (!proc.StandardOutput.EndOfStream)
                 {
+                    if (backgroundWorker.CancellationPending)
+                    {
+                        //Cancel.
+                        e.Result = false;
+                        return;
+                    }
+
                     string line = proc.StandardOutput.ReadLine();
 
                     if (!verboseViewToolStripMenuItem.Checked)
