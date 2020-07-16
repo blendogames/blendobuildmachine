@@ -30,11 +30,16 @@ namespace blendobuildmachine
             exeFolder = Properties.Settings.Default.lastexefolder;
             exeFilepath = string.Empty;
 
+            this.Load += new EventHandler(Form1_Load);            
+        }
+
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+            //We do this here to avoid the "invoke or begininvoke cannot be called on a control until the window handle has been created" bug.
             if (Properties.Settings.Default.runonstart)
             {
                 button1_Click(null, null);
             }
-
         }
 
         //DOWNLOAD THE LATEST CODE AND DATA FROM SOURCE CONTROL.
@@ -547,16 +552,7 @@ namespace blendobuildmachine
             Application.Exit();
         }
 
-        private void AddLog(string text)
-        {
-            listBox1.Items.Add(text);
-
-            int nItems = (int)(listBox1.Height / listBox1.ItemHeight);
-            listBox1.TopIndex = listBox1.Items.Count - nItems;
-
-            this.Update();
-            this.Refresh();
-        }
+       
 
         
 
@@ -572,9 +568,19 @@ namespace blendobuildmachine
         }
 
 
-        
-        
 
+
+
+        private void AddLog(string text)
+        {
+            listBox1.Items.Add(text);
+
+            int nItems = (int)(listBox1.Height / listBox1.ItemHeight);
+            listBox1.TopIndex = listBox1.Items.Count - nItems;
+
+            this.Update();
+            this.Refresh();
+        }
 
         private void AddLogInvoke(string text)
         {
