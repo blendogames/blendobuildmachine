@@ -46,12 +46,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_environmentVars = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox_runfilewhendone = new System.Windows.Forms.TextBox();
+            this.checkBox_exitwhendone = new System.Windows.Forms.CheckBox();
             this.checkBox_beep = new System.Windows.Forms.CheckBox();
             this.checkBox_verbose = new System.Windows.Forms.CheckBox();
             this.checkBox_runexewhendone = new System.Windows.Forms.CheckBox();
             this.checkBox_openfolderwhendone = new System.Windows.Forms.CheckBox();
             this.checkBox_buildonstart = new System.Windows.Forms.CheckBox();
-            this.checkBox_exitwhendone = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -80,7 +82,7 @@
             this.buttonOptionsOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOptionsOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOptionsOk.Location = new System.Drawing.Point(12, 621);
+            this.buttonOptionsOk.Location = new System.Drawing.Point(12, 615);
             this.buttonOptionsOk.Name = "buttonOptionsOk";
             this.buttonOptionsOk.Size = new System.Drawing.Size(507, 59);
             this.buttonOptionsOk.TabIndex = 100;
@@ -204,7 +206,7 @@
             this.groupBox2.Controls.Add(this.textBox_compilerexecutable);
             this.groupBox2.Location = new System.Drawing.Point(13, 403);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(506, 211);
+            this.groupBox2.Size = new System.Drawing.Size(506, 205);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Compiling";
@@ -237,13 +239,15 @@
             this.textBox_environmentVars.Location = new System.Drawing.Point(9, 148);
             this.textBox_environmentVars.Multiline = true;
             this.textBox_environmentVars.Name = "textBox_environmentVars";
-            this.textBox_environmentVars.Size = new System.Drawing.Size(487, 57);
+            this.textBox_environmentVars.Size = new System.Drawing.Size(487, 51);
             this.textBox_environmentVars.TabIndex = 5;
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.textBox_runfilewhendone);
             this.groupBox3.Controls.Add(this.checkBox_exitwhendone);
             this.groupBox3.Controls.Add(this.checkBox_beep);
             this.groupBox3.Controls.Add(this.checkBox_verbose);
@@ -257,10 +261,38 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Behavior";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 159);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(157, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "When build is done, run this file:";
+            // 
+            // textBox_runfilewhendone
+            // 
+            this.textBox_runfilewhendone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_runfilewhendone.Location = new System.Drawing.Point(175, 156);
+            this.textBox_runfilewhendone.Name = "textBox_runfilewhendone";
+            this.textBox_runfilewhendone.Size = new System.Drawing.Size(306, 20);
+            this.textBox_runfilewhendone.TabIndex = 10;
+            // 
+            // checkBox_exitwhendone
+            // 
+            this.checkBox_exitwhendone.AutoSize = true;
+            this.checkBox_exitwhendone.Location = new System.Drawing.Point(14, 135);
+            this.checkBox_exitwhendone.Name = "checkBox_exitwhendone";
+            this.checkBox_exitwhendone.Size = new System.Drawing.Size(199, 17);
+            this.checkBox_exitwhendone.TabIndex = 9;
+            this.checkBox_exitwhendone.Text = "When build is done, exit this program";
+            this.checkBox_exitwhendone.UseVisualStyleBackColor = true;
+            // 
             // checkBox_beep
             // 
             this.checkBox_beep.AutoSize = true;
-            this.checkBox_beep.Location = new System.Drawing.Point(14, 100);
+            this.checkBox_beep.Location = new System.Drawing.Point(14, 112);
             this.checkBox_beep.Name = "checkBox_beep";
             this.checkBox_beep.Size = new System.Drawing.Size(210, 17);
             this.checkBox_beep.TabIndex = 6;
@@ -270,17 +302,17 @@
             // checkBox_verbose
             // 
             this.checkBox_verbose.AutoSize = true;
-            this.checkBox_verbose.Location = new System.Drawing.Point(14, 127);
+            this.checkBox_verbose.Location = new System.Drawing.Point(14, 43);
             this.checkBox_verbose.Name = "checkBox_verbose";
             this.checkBox_verbose.Size = new System.Drawing.Size(228, 17);
-            this.checkBox_verbose.TabIndex = 8;
+            this.checkBox_verbose.TabIndex = 1;
             this.checkBox_verbose.Text = "Show verbose output when compiling build";
             this.checkBox_verbose.UseVisualStyleBackColor = true;
             // 
             // checkBox_runexewhendone
             // 
             this.checkBox_runexewhendone.AutoSize = true;
-            this.checkBox_runexewhendone.Location = new System.Drawing.Point(14, 46);
+            this.checkBox_runexewhendone.Location = new System.Drawing.Point(14, 66);
             this.checkBox_runexewhendone.Name = "checkBox_runexewhendone";
             this.checkBox_runexewhendone.Size = new System.Drawing.Size(218, 17);
             this.checkBox_runexewhendone.TabIndex = 2;
@@ -290,7 +322,7 @@
             // checkBox_openfolderwhendone
             // 
             this.checkBox_openfolderwhendone.AutoSize = true;
-            this.checkBox_openfolderwhendone.Location = new System.Drawing.Point(14, 72);
+            this.checkBox_openfolderwhendone.Location = new System.Drawing.Point(14, 89);
             this.checkBox_openfolderwhendone.Name = "checkBox_openfolderwhendone";
             this.checkBox_openfolderwhendone.Size = new System.Drawing.Size(261, 17);
             this.checkBox_openfolderwhendone.TabIndex = 4;
@@ -307,22 +339,12 @@
             this.checkBox_buildonstart.Text = "Automatically make a build when this program starts";
             this.checkBox_buildonstart.UseVisualStyleBackColor = true;
             // 
-            // checkBox_exitwhendone
-            // 
-            this.checkBox_exitwhendone.AutoSize = true;
-            this.checkBox_exitwhendone.Location = new System.Drawing.Point(14, 153);
-            this.checkBox_exitwhendone.Name = "checkBox_exitwhendone";
-            this.checkBox_exitwhendone.Size = new System.Drawing.Size(200, 17);
-            this.checkBox_exitwhendone.TabIndex = 9;
-            this.checkBox_exitwhendone.Text = "On successful build, exit this program";
-            this.checkBox_exitwhendone.UseVisualStyleBackColor = true;
-            // 
             // optionsmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(531, 692);
+            this.ClientSize = new System.Drawing.Size(531, 686);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -368,5 +390,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox_beep;
         private System.Windows.Forms.CheckBox checkBox_exitwhendone;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox_runfilewhendone;
     }
 }

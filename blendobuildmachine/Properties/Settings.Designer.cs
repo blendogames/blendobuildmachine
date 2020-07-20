@@ -178,5 +178,17 @@ namespace blendobuildmachine.Properties {
                 this["exitwhendone"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string runfilewhendone {
+            get {
+                return ((string)(this["runfilewhendone"]));
+            }
+            set {
+                this["runfilewhendone"] = value;
+            }
+        }
     }
 }

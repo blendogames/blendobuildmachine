@@ -426,6 +426,30 @@ namespace blendobuildmachine
                 }
             }
 
+            if (!string.IsNullOrWhiteSpace(Properties.Settings.Default.runfilewhendone))
+            {
+                string fileToRun = Properties.Settings.Default.runfilewhendone;
+
+                if (!File.Exists(fileToRun))
+                {
+                    AddLog(string.Format("Cannot find file: {0}", fileToRun));
+                }
+                else
+                {
+                    try
+                    {
+                        var startInfo = new ProcessStartInfo();
+                        startInfo.FileName = fileToRun;
+                        Process.Start(startInfo);
+                        AddLog(string.Format("Running: {0}", fileToRun));
+                    }
+                    catch (Exception err)
+                    {
+                        AddLog(string.Format("Failed to run file: {0}", err.Message));
+                    }
+                }
+            }
+
             if (Properties.Settings.Default.exitwhendone)
             {
                 //Exit when done is ON. So, exit here.
