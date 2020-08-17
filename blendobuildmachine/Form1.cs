@@ -417,6 +417,12 @@ namespace blendobuildmachine
                         var startInfo = new ProcessStartInfo();
                         startInfo.WorkingDirectory = exeFolder;
                         startInfo.FileName = exeFilepath;
+
+                        if (!string.IsNullOrEmpty(Properties.Settings.Default.arguments))
+                        {
+                            startInfo.Arguments = Properties.Settings.Default.arguments;
+                        }
+
                         Process.Start(startInfo);
                     }
                     catch (Exception err)
@@ -428,6 +434,7 @@ namespace blendobuildmachine
 
             if (!string.IsNullOrWhiteSpace(Properties.Settings.Default.runfilewhendone))
             {
+                //RUN SPECIFIC FILE WHEN DONE.
                 string fileToRun = Properties.Settings.Default.runfilewhendone;
 
                 if (!File.Exists(fileToRun))
@@ -438,8 +445,11 @@ namespace blendobuildmachine
                 {
                     try
                     {
+                        string workingFolder = Path.GetDirectoryName(fileToRun);
+
                         var startInfo = new ProcessStartInfo();
                         startInfo.FileName = fileToRun;
+                        startInfo.WorkingDirectory = workingFolder;
                         Process.Start(startInfo);
                         AddLog(string.Format("Running: {0}", fileToRun));
                     }

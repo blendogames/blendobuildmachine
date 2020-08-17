@@ -190,5 +190,17 @@ namespace blendobuildmachine.Properties {
                 this["runfilewhendone"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string arguments {
+            get {
+                return ((string)(this["arguments"]));
+            }
+            set {
+                this["arguments"] = value;
+            }
+        }
     }
 }

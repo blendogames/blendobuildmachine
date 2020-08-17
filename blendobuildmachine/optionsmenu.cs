@@ -35,6 +35,7 @@ namespace blendobuildmachine
             checkBox_beep.Checked = Properties.Settings.Default.playbeep;
             checkBox_exitwhendone.Checked = Properties.Settings.Default.exitwhendone;
             textBox_runfilewhendone.Text = Properties.Settings.Default.runfilewhendone;
+            textBox_arguments.Text = Properties.Settings.Default.arguments;
 
             DoSanityCheck(false);
         }
@@ -77,6 +78,7 @@ namespace blendobuildmachine
             Properties.Settings.Default.playbeep = checkBox_beep.Checked;
             Properties.Settings.Default.exitwhendone = checkBox_exitwhendone.Checked;
             Properties.Settings.Default.runfilewhendone = textBox_runfilewhendone.Text;
+            Properties.Settings.Default.arguments = textBox_arguments.Text;
 
             Properties.Settings.Default.Save();
 
