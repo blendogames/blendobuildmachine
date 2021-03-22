@@ -17,6 +17,7 @@ namespace blendobuildmachine
             textBox_repositoryurl.Text = Properties.Settings.Default.repositoryUrl;
             textBox_svnexecutable.Text = Properties.Settings.Default.svnExecutable;
             textBox_solutionfile.Text = Properties.Settings.Default.solutionfile;
+            textBox_commandlineparameters.Text = Properties.Settings.Default.compilercommandline;
 
             string varsList = Properties.Settings.Default.environmentVars.Replace(",", Environment.NewLine);
             textBox_environmentVars.Text = varsList;
@@ -67,6 +68,7 @@ namespace blendobuildmachine
             Properties.Settings.Default.repositoryUrl = textBox_repositoryurl.Text;
             Properties.Settings.Default.svnExecutable = textBox_svnexecutable.Text;
             Properties.Settings.Default.solutionfile = textBox_solutionfile.Text;
+            Properties.Settings.Default.compilercommandline = textBox_commandlineparameters.Text;
 
             string varsList = textBox_environmentVars.Text.Replace(Environment.NewLine, ",");
             Properties.Settings.Default.environmentVars = varsList;

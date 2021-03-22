@@ -224,7 +224,7 @@ namespace blendobuildmachine
             //Start the compile.
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = Properties.Settings.Default.compilerExecutable;
-            startInfo.Arguments = Properties.Settings.Default.solutionfile;
+            startInfo.Arguments = string.Format("{0} {1}", Properties.Settings.Default.solutionfile, Properties.Settings.Default.compilercommandline);
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
             startInfo.CreateNoWindow = true;
@@ -534,6 +534,27 @@ namespace blendobuildmachine
 
             return success;
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                if (backgroundWorker != null)
+                {
+                    if (backgroundWorker.IsBusy)
+                    {
+                        backgroundWorker.WorkerSupportsCancellation = true;
+                        backgroundWorker.CancelAsync();
+                    }
+                }
+
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+
+        
 
         protected void MyClosingHandler(object sender, FormClosingEventArgs e)
         {

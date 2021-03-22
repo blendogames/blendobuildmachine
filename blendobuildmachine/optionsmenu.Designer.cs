@@ -46,6 +46,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_environmentVars = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox_arguments = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox_runfilewhendone = new System.Windows.Forms.TextBox();
             this.checkBox_exitwhendone = new System.Windows.Forms.CheckBox();
@@ -54,8 +56,8 @@
             this.checkBox_runexewhendone = new System.Windows.Forms.CheckBox();
             this.checkBox_openfolderwhendone = new System.Windows.Forms.CheckBox();
             this.checkBox_buildonstart = new System.Windows.Forms.CheckBox();
-            this.textBox_arguments = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.textBox_commandlineparameters = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -63,8 +65,8 @@
             // 
             // textBox_localpath
             // 
-            this.textBox_localpath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_localpath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_localpath.Location = new System.Drawing.Point(6, 42);
             this.textBox_localpath.Name = "textBox_localpath";
             this.textBox_localpath.Size = new System.Drawing.Size(491, 20);
@@ -81,10 +83,10 @@
             // 
             // buttonOptionsOk
             // 
-            this.buttonOptionsOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOptionsOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOptionsOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOptionsOk.Location = new System.Drawing.Point(12, 641);
+            this.buttonOptionsOk.Location = new System.Drawing.Point(12, 690);
             this.buttonOptionsOk.Name = "buttonOptionsOk";
             this.buttonOptionsOk.Size = new System.Drawing.Size(507, 59);
             this.buttonOptionsOk.TabIndex = 100;
@@ -94,8 +96,8 @@
             // 
             // textBox_repositoryurl
             // 
-            this.textBox_repositoryurl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_repositoryurl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_repositoryurl.Location = new System.Drawing.Point(6, 91);
             this.textBox_repositoryurl.Name = "textBox_repositoryurl";
             this.textBox_repositoryurl.Size = new System.Drawing.Size(491, 20);
@@ -112,8 +114,8 @@
             // 
             // textBox_svnexecutable
             // 
-            this.textBox_svnexecutable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_svnexecutable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_svnexecutable.Location = new System.Drawing.Point(6, 141);
             this.textBox_svnexecutable.Name = "textBox_svnexecutable";
             this.textBox_svnexecutable.Size = new System.Drawing.Size(447, 20);
@@ -130,9 +132,9 @@
             // 
             // textBox_compilerexecutable
             // 
-            this.textBox_compilerexecutable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_compilerexecutable.Location = new System.Drawing.Point(9, 94);
+            this.textBox_compilerexecutable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_compilerexecutable.Location = new System.Drawing.Point(9, 134);
             this.textBox_compilerexecutable.Name = "textBox_compilerexecutable";
             this.textBox_compilerexecutable.Size = new System.Drawing.Size(443, 20);
             this.textBox_compilerexecutable.TabIndex = 4;
@@ -140,7 +142,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 78);
+            this.label4.Location = new System.Drawing.Point(10, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(247, 13);
             this.label4.TabIndex = 8;
@@ -148,8 +150,8 @@
             // 
             // textBox_solutionfile
             // 
-            this.textBox_solutionfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_solutionfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_solutionfile.Location = new System.Drawing.Point(9, 41);
             this.textBox_solutionfile.Name = "textBox_solutionfile";
             this.textBox_solutionfile.Size = new System.Drawing.Size(487, 20);
@@ -166,8 +168,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox_localpath);
             this.groupBox1.Controls.Add(this.label1);
@@ -195,10 +197,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.textBox_commandlineparameters);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.textBox_environmentVars);
@@ -208,7 +212,7 @@
             this.groupBox2.Controls.Add(this.textBox_compilerexecutable);
             this.groupBox2.Location = new System.Drawing.Point(13, 433);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(506, 201);
+            this.groupBox2.Size = new System.Drawing.Size(506, 250);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Compiling";
@@ -216,7 +220,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(458, 94);
+            this.button2.Location = new System.Drawing.Point(458, 134);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(38, 20);
             this.button2.TabIndex = 12;
@@ -227,7 +231,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 132);
+            this.label6.Location = new System.Drawing.Point(10, 163);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(280, 13);
             this.label6.TabIndex = 11;
@@ -235,19 +239,19 @@
             // 
             // textBox_environmentVars
             // 
-            this.textBox_environmentVars.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_environmentVars.Location = new System.Drawing.Point(9, 148);
+            this.textBox_environmentVars.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_environmentVars.Location = new System.Drawing.Point(9, 179);
             this.textBox_environmentVars.Multiline = true;
             this.textBox_environmentVars.Name = "textBox_environmentVars";
-            this.textBox_environmentVars.Size = new System.Drawing.Size(487, 47);
+            this.textBox_environmentVars.Size = new System.Drawing.Size(487, 65);
             this.textBox_environmentVars.TabIndex = 5;
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.textBox_arguments);
             this.groupBox3.Controls.Add(this.label7);
@@ -265,6 +269,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Behavior";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(44, 90);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(127, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "command-line arguments:";
+            // 
+            // textBox_arguments
+            // 
+            this.textBox_arguments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_arguments.Location = new System.Drawing.Point(175, 89);
+            this.textBox_arguments.Name = "textBox_arguments";
+            this.textBox_arguments.Size = new System.Drawing.Size(306, 20);
+            this.textBox_arguments.TabIndex = 3;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -276,8 +298,8 @@
             // 
             // textBox_runfilewhendone
             // 
-            this.textBox_runfilewhendone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_runfilewhendone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_runfilewhendone.Location = new System.Drawing.Point(175, 179);
             this.textBox_runfilewhendone.Name = "textBox_runfilewhendone";
             this.textBox_runfilewhendone.Size = new System.Drawing.Size(306, 20);
@@ -343,30 +365,30 @@
             this.checkBox_buildonstart.Text = "Automatically make a build when this program starts";
             this.checkBox_buildonstart.UseVisualStyleBackColor = true;
             // 
-            // textBox_arguments
+            // textBox_commandlineparameters
             // 
-            this.textBox_arguments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_arguments.Location = new System.Drawing.Point(175, 89);
-            this.textBox_arguments.Name = "textBox_arguments";
-            this.textBox_arguments.Size = new System.Drawing.Size(306, 20);
-            this.textBox_arguments.TabIndex = 3;
+            this.textBox_commandlineparameters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_commandlineparameters.Location = new System.Drawing.Point(9, 87);
+            this.textBox_commandlineparameters.Name = "textBox_commandlineparameters";
+            this.textBox_commandlineparameters.Size = new System.Drawing.Size(487, 20);
+            this.textBox_commandlineparameters.TabIndex = 13;
             // 
-            // label8
+            // label9
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(44, 90);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "command-line arguments:";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(10, 71);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(172, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Optional command-line parameters:";
             // 
             // optionsmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(531, 712);
+            this.ClientSize = new System.Drawing.Size(531, 761);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -416,5 +438,7 @@
         private System.Windows.Forms.TextBox textBox_runfilewhendone;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_arguments;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox_commandlineparameters;
     }
 }
