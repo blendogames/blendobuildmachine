@@ -164,6 +164,11 @@ namespace blendobuildmachine
             }
 
             //Continue to next step...
+            StartCompile();
+        }
+
+        private void StartCompile()
+        {
             progressBar1.Value = 80;
             AddLog(string.Empty);
             AddLog("---- Starting step 2 of 2: compiling game code ----");
@@ -491,14 +496,27 @@ namespace blendobuildmachine
             AddLog(string.Empty);
             AddLog("Starting build.");
             AddLog(string.Empty);
-            AddLog("---- Starting step 1 of 2: downloading latest game data ----");
-
-            backgroundWorker = new BackgroundWorker();
-            backgroundWorker.DoWork += OnDownloadDoWork;
-            backgroundWorker.RunWorkerCompleted += OnDownloadCompleted;
-            backgroundWorker.RunWorkerAsync();
 
             progressBar1.Value = 25;
+
+            AddLog("---- Starting step 1 of 2: downloading latest game data ----");
+
+            if (Properties.Settings.Default.useSVN)
+            {
+                backgroundWorker = new BackgroundWorker();
+                backgroundWorker.DoWork += OnDownloadDoWork;
+                backgroundWorker.RunWorkerCompleted += OnDownloadCompleted;
+                backgroundWorker.RunWorkerAsync();
+            }
+            else
+            {
+                AddLog(string.Empty);
+                AddLog(">>>>>>>> SKIPPING DOWNLOAD STEP <<<<<<<<");
+                AddLog("Note: to re-enable downloading latest data, click 'Use SVN source control' in the Options menu.");
+                AddLog(string.Empty);
+
+                StartCompile();
+            }
         }       
 
         private bool SanityCheck()

@@ -40,8 +40,11 @@
             this.textBox_solutionfile = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_getLatest = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox_commandlineparameters = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_environmentVars = new System.Windows.Forms.TextBox();
@@ -56,8 +59,6 @@
             this.checkBox_runexewhendone = new System.Windows.Forms.CheckBox();
             this.checkBox_openfolderwhendone = new System.Windows.Forms.CheckBox();
             this.checkBox_buildonstart = new System.Windows.Forms.CheckBox();
-            this.textBox_commandlineparameters = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,15 +68,15 @@
             // 
             this.textBox_localpath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_localpath.Location = new System.Drawing.Point(6, 42);
+            this.textBox_localpath.Location = new System.Drawing.Point(199, 48);
             this.textBox_localpath.Name = "textBox_localpath";
-            this.textBox_localpath.Size = new System.Drawing.Size(491, 20);
+            this.textBox_localpath.Size = new System.Drawing.Size(551, 20);
             this.textBox_localpath.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 26);
+            this.label1.Location = new System.Drawing.Point(7, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 13);
             this.label1.TabIndex = 1;
@@ -86,9 +87,9 @@
             this.buttonOptionsOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOptionsOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOptionsOk.Location = new System.Drawing.Point(12, 690);
+            this.buttonOptionsOk.Location = new System.Drawing.Point(12, 593);
             this.buttonOptionsOk.Name = "buttonOptionsOk";
-            this.buttonOptionsOk.Size = new System.Drawing.Size(507, 59);
+            this.buttonOptionsOk.Size = new System.Drawing.Size(760, 40);
             this.buttonOptionsOk.TabIndex = 100;
             this.buttonOptionsOk.Text = "Ok";
             this.buttonOptionsOk.UseVisualStyleBackColor = true;
@@ -98,15 +99,15 @@
             // 
             this.textBox_repositoryurl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_repositoryurl.Location = new System.Drawing.Point(6, 91);
+            this.textBox_repositoryurl.Location = new System.Drawing.Point(199, 76);
             this.textBox_repositoryurl.Name = "textBox_repositoryurl";
-            this.textBox_repositoryurl.Size = new System.Drawing.Size(491, 20);
+            this.textBox_repositoryurl.Size = new System.Drawing.Size(551, 20);
             this.textBox_repositoryurl.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 75);
+            this.label2.Location = new System.Drawing.Point(6, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 4;
@@ -116,15 +117,15 @@
             // 
             this.textBox_svnexecutable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_svnexecutable.Location = new System.Drawing.Point(6, 141);
+            this.textBox_svnexecutable.Location = new System.Drawing.Point(198, 107);
             this.textBox_svnexecutable.Name = "textBox_svnexecutable";
-            this.textBox_svnexecutable.Size = new System.Drawing.Size(447, 20);
+            this.textBox_svnexecutable.Size = new System.Drawing.Size(506, 20);
             this.textBox_svnexecutable.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 125);
+            this.label3.Location = new System.Drawing.Point(7, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(185, 13);
             this.label3.TabIndex = 6;
@@ -134,7 +135,7 @@
             // 
             this.textBox_compilerexecutable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_compilerexecutable.Location = new System.Drawing.Point(9, 134);
+            this.textBox_compilerexecutable.Location = new System.Drawing.Point(262, 79);
             this.textBox_compilerexecutable.Name = "textBox_compilerexecutable";
             this.textBox_compilerexecutable.Size = new System.Drawing.Size(443, 20);
             this.textBox_compilerexecutable.TabIndex = 4;
@@ -142,7 +143,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 118);
+            this.label4.Location = new System.Drawing.Point(5, 82);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(247, 13);
             this.label4.TabIndex = 8;
@@ -152,7 +153,7 @@
             // 
             this.textBox_solutionfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_solutionfile.Location = new System.Drawing.Point(9, 41);
+            this.textBox_solutionfile.Location = new System.Drawing.Point(262, 19);
             this.textBox_solutionfile.Name = "textBox_solutionfile";
             this.textBox_solutionfile.Size = new System.Drawing.Size(487, 20);
             this.textBox_solutionfile.TabIndex = 3;
@@ -160,7 +161,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 22);
+            this.label5.Location = new System.Drawing.Point(5, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(195, 13);
             this.label5.TabIndex = 10;
@@ -170,6 +171,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.checkBox_getLatest);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox_localpath);
             this.groupBox1.Controls.Add(this.label1);
@@ -177,19 +179,32 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox_svnexecutable);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 252);
+            this.groupBox1.Location = new System.Drawing.Point(12, 241);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(507, 174);
+            this.groupBox1.Size = new System.Drawing.Size(760, 139);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SVN";
             // 
+            // checkBox_getLatest
+            // 
+            this.checkBox_getLatest.AutoSize = true;
+            this.checkBox_getLatest.Checked = true;
+            this.checkBox_getLatest.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_getLatest.Location = new System.Drawing.Point(7, 20);
+            this.checkBox_getLatest.Name = "checkBox_getLatest";
+            this.checkBox_getLatest.Size = new System.Drawing.Size(140, 17);
+            this.checkBox_getLatest.TabIndex = 8;
+            this.checkBox_getLatest.Text = "Use SVN source control";
+            this.checkBox_getLatest.UseVisualStyleBackColor = true;
+            this.checkBox_getLatest.CheckedChanged += new System.EventHandler(this.checkBox_getLatest_CheckedChanged);
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(459, 141);
+            this.button1.Location = new System.Drawing.Point(710, 107);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 20);
+            this.button1.Size = new System.Drawing.Size(40, 21);
             this.button1.TabIndex = 7;
             this.button1.Text = "Find";
             this.button1.UseVisualStyleBackColor = true;
@@ -210,17 +225,35 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox_compilerexecutable);
-            this.groupBox2.Location = new System.Drawing.Point(13, 433);
+            this.groupBox2.Location = new System.Drawing.Point(13, 394);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(506, 250);
+            this.groupBox2.Size = new System.Drawing.Size(759, 193);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Compiling";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(5, 53);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(172, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Optional command-line parameters:";
+            // 
+            // textBox_commandlineparameters
+            // 
+            this.textBox_commandlineparameters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_commandlineparameters.Location = new System.Drawing.Point(262, 50);
+            this.textBox_commandlineparameters.Name = "textBox_commandlineparameters";
+            this.textBox_commandlineparameters.Size = new System.Drawing.Size(487, 20);
+            this.textBox_commandlineparameters.TabIndex = 13;
+            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(458, 134);
+            this.button2.Location = new System.Drawing.Point(711, 79);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(38, 20);
             this.button2.TabIndex = 12;
@@ -231,7 +264,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 163);
+            this.label6.Location = new System.Drawing.Point(5, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(280, 13);
             this.label6.TabIndex = 11;
@@ -242,10 +275,10 @@
             this.textBox_environmentVars.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_environmentVars.Location = new System.Drawing.Point(9, 179);
+            this.textBox_environmentVars.Location = new System.Drawing.Point(9, 124);
             this.textBox_environmentVars.Multiline = true;
             this.textBox_environmentVars.Name = "textBox_environmentVars";
-            this.textBox_environmentVars.Size = new System.Drawing.Size(487, 65);
+            this.textBox_environmentVars.Size = new System.Drawing.Size(740, 57);
             this.textBox_environmentVars.TabIndex = 5;
             // 
             // groupBox3
@@ -264,7 +297,7 @@
             this.groupBox3.Controls.Add(this.checkBox_buildonstart);
             this.groupBox3.Location = new System.Drawing.Point(12, 13);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(497, 218);
+            this.groupBox3.Size = new System.Drawing.Size(760, 218);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Behavior";
@@ -284,7 +317,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_arguments.Location = new System.Drawing.Point(175, 89);
             this.textBox_arguments.Name = "textBox_arguments";
-            this.textBox_arguments.Size = new System.Drawing.Size(306, 20);
+            this.textBox_arguments.Size = new System.Drawing.Size(575, 20);
             this.textBox_arguments.TabIndex = 3;
             // 
             // label7
@@ -302,7 +335,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_runfilewhendone.Location = new System.Drawing.Point(175, 179);
             this.textBox_runfilewhendone.Name = "textBox_runfilewhendone";
-            this.textBox_runfilewhendone.Size = new System.Drawing.Size(306, 20);
+            this.textBox_runfilewhendone.Size = new System.Drawing.Size(575, 20);
             this.textBox_runfilewhendone.TabIndex = 10;
             // 
             // checkBox_exitwhendone
@@ -365,30 +398,12 @@
             this.checkBox_buildonstart.Text = "Automatically make a build when this program starts";
             this.checkBox_buildonstart.UseVisualStyleBackColor = true;
             // 
-            // textBox_commandlineparameters
-            // 
-            this.textBox_commandlineparameters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_commandlineparameters.Location = new System.Drawing.Point(9, 87);
-            this.textBox_commandlineparameters.Name = "textBox_commandlineparameters";
-            this.textBox_commandlineparameters.Size = new System.Drawing.Size(487, 20);
-            this.textBox_commandlineparameters.TabIndex = 13;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 71);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(172, 13);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Optional command-line parameters:";
-            // 
             // optionsmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(531, 761);
+            this.ClientSize = new System.Drawing.Size(784, 641);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -440,5 +455,6 @@
         private System.Windows.Forms.TextBox textBox_arguments;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox_commandlineparameters;
+        private System.Windows.Forms.CheckBox checkBox_getLatest;
     }
 }

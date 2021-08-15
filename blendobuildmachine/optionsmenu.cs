@@ -38,6 +38,9 @@ namespace blendobuildmachine
             textBox_runfilewhendone.Text = Properties.Settings.Default.runfilewhendone;
             textBox_arguments.Text = Properties.Settings.Default.arguments;
 
+            checkBox_getLatest.Checked = Properties.Settings.Default.useSVN;
+            checkBox_getLatest_CheckedChanged(null, null);
+
             DoSanityCheck(false);
         }
 
@@ -81,6 +84,9 @@ namespace blendobuildmachine
             Properties.Settings.Default.exitwhendone = checkBox_exitwhendone.Checked;
             Properties.Settings.Default.runfilewhendone = textBox_runfilewhendone.Text;
             Properties.Settings.Default.arguments = textBox_arguments.Text;
+
+            Properties.Settings.Default.useSVN = checkBox_getLatest.Checked;
+
 
             Properties.Settings.Default.Save();
 
@@ -202,6 +208,20 @@ namespace blendobuildmachine
             }
 
             MessageBox.Show("Unable to auto-find msbuild.exe\n\nPlease search your computer for 'msbuild.exe'");
+        }
+
+        private void checkBox_getLatest_CheckedChanged(object sender, EventArgs e)
+        {
+            bool value = checkBox_getLatest.Checked;
+
+            textBox_localpath.Enabled = value;
+            textBox_repositoryurl.Enabled = value;
+            textBox_svnexecutable.Enabled = value;
+            button1.Enabled = value;
+
+            label1.Enabled = value;
+            label2.Enabled = value;
+            label3.Enabled = value;
         }
     }
 }
